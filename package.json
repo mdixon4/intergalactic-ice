@@ -10,8 +10,13 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/node": "^5.0.3",
-		"astro": "^2.0.6",
+		"@astrojs/node": "^5.0.4",
+		"astro": "^2.0.15",
 		"express": "^4.18.2"
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"astro@2.0.15": "patches/astro@2.0.15.patch"
+		}
 	}
 }

@@ -1,0 +1,16 @@
+diff --git a/dist/core/app/index.js b/dist/core/app/index.js
+index 0c0c7f0f8ae6a922fd3dfec4368260d7ae323d30..37ff7eb0f826591aefb6624abee1882e87638ddb 100644
+--- a/dist/core/app/index.js
++++ b/dist/core/app/index.js
+@@ -101,7 +101,10 @@ class App {
+     if (__privateGet(this, _manifest).assets.has(url.pathname)) {
+       return void 0;
+     }
+-    let pathname = "/" + this.removeBase(url.pathname);
++    let pathname = this.removeBase(url.pathname);
++    if (!pathname.startsWith("/")) {
++      pathname = "/" + pathname;
++    }
+     let routeData = matchRoute(pathname, __privateGet(this, _manifestData));
+     if (routeData) {
+       if (routeData.prerender)
